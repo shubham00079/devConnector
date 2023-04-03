@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, redirect } from 'react-router-dom';
 // To connect react & redux
 import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
@@ -31,7 +31,7 @@ const Register = ({setAlert, register, isAuthenticated}) => {
 
   // Redirect if logged In
   if(isAuthenticated){
-    return <Redirect to='/dashboard'/>
+    return redirect("/dashboard");
   }
 
   return (
