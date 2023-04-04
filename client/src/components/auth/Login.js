@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, redirect } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/auth';
@@ -18,18 +18,16 @@ const Login = ({ login, isAuthenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    login(email, password);
-    console.log('Success');
+    login({email, password});
   };
 
   // Redirect if logged In
   if (isAuthenticated) {
-    return redirect("/dashboard");
-  }
+      return <Navigate to='/dashboard'/>
+    }
 
   return (
     <section className="container">
-      <div className="alert alert-danger">Invalid credentials</div>
       <h1 className="large text-primary">Sign In</h1>
       <p className="lead">
         <i className="fas fa-user"></i> Sign Into Your Account
@@ -40,7 +38,6 @@ const Login = ({ login, isAuthenticated }) => {
             type="email"
             placeholder="Email Address"
             name="email"
-            required
             value={email}
             onChange={(e) => handleChange(e)}
           />
