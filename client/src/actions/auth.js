@@ -7,6 +7,7 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  LOGOUT,
 } from './types';
 import setAuthToken from '../utils/setauthToken';
 
@@ -89,3 +90,8 @@ export const login =
       });
     }
   };
+
+// LogOut User / Clear Profile
+export const logout = () => (dispatch) => {
+  dispatch({ type: LOGOUT });
+};
