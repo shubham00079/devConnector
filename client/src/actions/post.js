@@ -72,7 +72,7 @@ export const deletePost = (postId) => async (dispatch) => {
       payload: postId,
     });
 
-    dispatch(setAlert('Post Removed', 'success'));
+    dispatch(setAlert('Post Removed', 'danger'));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
@@ -96,7 +96,7 @@ export const addPost = (formData) => async (dispatch) => {
       payload: res.data,
     });
 
-    dispatch(setAlert('Post Removed', 'success'));
+    dispatch(setAlert('Post Added', 'success'));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
