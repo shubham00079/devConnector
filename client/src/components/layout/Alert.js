@@ -14,9 +14,11 @@ const Alert = ({ alerts }) => {
       );
     });
   return (
-    <section className="container" style={{}}>
-      {alertArr}
-    </section>
+    alertArr && (
+      <section className="container" style={{}}>
+        {alertArr}
+      </section>
+    )
   );
 };
 
