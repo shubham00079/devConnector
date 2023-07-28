@@ -32,7 +32,7 @@ const AddEducation = ({ addEducation }) => {
   };
 
   return (
-    <Fragment>
+    <section className="container">
       <h1 className="large text-primary">Add Your Education</h1>
       <p className="lead">
         <i className="fas fa-code-branch"></i> Add any schoolor bootcamp that 
@@ -116,7 +116,7 @@ const AddEducation = ({ addEducation }) => {
           Go Back
         </Link>
       </form>
-    </Fragment>
+    </section>
   );
 };
 

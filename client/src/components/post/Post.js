@@ -17,7 +17,7 @@ const Post = ({ getPost, post: { post, loading } }) => {
   return loading || post === null ? (
     <Spinner />
   ) : (
-    <Fragment>
+    <section className="container">
       <Link to="/posts" className="btn">
         Back to Posts
       </Link>
@@ -28,7 +28,7 @@ const Post = ({ getPost, post: { post, loading } }) => {
           <CommentItem key={comment._id} comment={comment} postId={post._id} />
         ))}
       </div>
-    </Fragment>
+    </section>
   );
 };
 
